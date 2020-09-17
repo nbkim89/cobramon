@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 import { Form, InputGroup } from "../components/LoginForm";
+import Logo from "../components/Logo/";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,8 +26,8 @@ function Login() {
   };
 
   return (
-    <div className="background-image">
-    <h1 className="title-text"> project cobra </h1>
+    <div className="background-image forms">
+    <Logo />
     <div className="login-form">
       <h1>Login</h1>
       <Form onSubmit={handleFormSubmit}>

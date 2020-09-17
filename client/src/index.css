@@ -41,6 +41,12 @@ h1 {
   background-position: right bottom;
 }
 
+@media only screen and (max-width: 600px) {
+  .background-image.forms {
+    justify-content: unset;
+  }
+}
+
 .title-text {
   font-family: 'Anton', sans-serif;
   color: white;

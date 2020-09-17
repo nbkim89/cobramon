@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import "./tables.css";
 import { useAuth } from "../../utils/auth";
-import Chat from "../../components/Chat/Chat";
 
 function Tables() {
   const { user } = useAuth();
