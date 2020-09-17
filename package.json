@@ -1,9 +1,9 @@
 {
-  "name": "create-react-express-jwt-server",
+  "name": "armonia",
   "version": "2.1.2",
   "description": "Mern Demo",
   "main": "server.js",
-  "engine": {
+  "engines": {
     "node": "14.x"
   },
   "scripts": {
@@ -11,16 +11,8 @@
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "author": "Travis Thompson, John Desrosiers",
+  "author": "Kelly Gowing, Nick Kim, Rocky Salerno, Garrett Trask",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "nodemon": "^2.0.3",
-    "prettier": "^2.0.5"
-  },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.2",
