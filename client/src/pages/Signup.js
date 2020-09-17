@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { useAuth } from "../utils/auth";
 // import ImageUpload from "../components/SignupForm/ImageUpload";
 import { Form, InputGroup } from "../components/LoginForm/";
+import Logo from "../components/Logo/";
 
 function Signup() {
   const [formState, setFormState] = useState({
@@ -58,7 +59,7 @@ function Signup() {
 
   return (
     <div className="background-image">
-    <h1 className="title-text"> project cobra </h1>
+    <Logo/>
     <div className="login-form">
       <h1>Sign Up</h1>
       <Form onSubmit={handleFormSubmit}>

@@ -7,7 +7,7 @@ function ThankYou() {
 
   return (
     <div className="background-image">
-      <h1 className="title-text">Thank you for visiting company name</h1>
+      <h1 className="title-text">Thank you for visiting!</h1>
     </div>
   );
 }
