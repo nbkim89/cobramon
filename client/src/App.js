@@ -59,7 +59,7 @@ function App() {
               <Reviews />
             </Route>
            
-            <Route path="/welcome/:company_id/:table_num">
+            <Route path="/welcome/:company_id/:table_num/:company_name">
               <Welcome />
             </Route>
             <Route path="/customerchat" exact component={CustomerChat} />

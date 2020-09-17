@@ -6,16 +6,19 @@ import "./welcome.css";
 // import { useAuth } from "../utils/auth";
 
 function Welcome() {
-  const { company_id, table_num } = useParams();
+  const { company_id, table_num, company_name } = useParams();
+  const [decodedCompanyName, setDecodedCompanyName] = useState()
+
+  useEffect(() => {
+    setDecodedCompanyName(decodeURI(company_name))
+  }, []);
+
   return (
     <div className="background-image">
-      <h1 className="title-text"> Welcome to COMPANY NAME </h1>
-      {/* TODO: CORRECT LINK */}
-      {/* onClick={e => (!company_id || !table_num) ? e.preventDefault() : null} to={`/customerchat/name={ADDNAME}&room=${company_id}${table_num}` */}
-      <Link className="service-link" to='/customerchat'>
-        <button> 
-          Request Service
-        </button>
+      <h1 className="title-text"> Welcome to {decodedCompanyName} </h1>
+      <Link onClick={e => (!table_num || !company_id) ? e.preventDefault() : null} to={`/customerchat?name=customer&room=${company_id}-${table_num}`}>
+        <button type="submit"
+        >Start Chat</button>
       </Link>
     </div>
   );
