@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import API from "./../utils/API";
 import Chat from "../components/Chat/Chat";
 import queryString from "query-string";
-// import { Link } from "react-router-dom";
-// import { useAuth } from "../utils/auth";
 
 function CustomerChat({ location }) {
   const [room, setRoom] = useState("");

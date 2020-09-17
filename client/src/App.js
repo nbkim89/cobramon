@@ -4,23 +4,24 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 // Our Components
 import { AuthProvider } from "./utils/auth";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import Signup from "./pages/Signup";
-import Home from "./pages/Home";
-import ChatSidebar from "./pages/Chat/";
-import Tables from "./pages/Tables";
-import QRCodes from "./pages/QRCodes/";
-import Reviews from "./pages/Reviews";
-import Welcome from "./pages/Welcome/";
-import CustomerChat from "./pages/CustomerChat";
-import CustomerReview from "./pages/CustomerReview";
-import ThankYou from "./pages/ThankYou";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
-import Chat from "./components/Chat/Chat";
-import Join from "./components/Join/Join";
-import CompanyChat from "./components/CompanyChat/CompanyChat";
+// Company Routes
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import QRCodes from "./pages/QRCodes/";
+import Chat from "./pages/Chat/";
+// Customer Routes
+import Welcome from "./pages/Welcome/";
+import CustomerChat from "./pages/CustomerChat";
+import ThankYou from "./pages/ThankYou";
+// import CustomerReview from "./pages/CustomerReview";
+// import Profile from "./pages/Profile";
+// import Home from "./pages/Home";
+// import Tables from "./pages/Tables";
+// import Reviews from "./pages/Reviews";
+// import Chat from "./components/Chat/Chat";
+// import Join from "./components/Join/Join";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <div>
           <Navbar />
           <Switch>
+            {/* Company Routes*/}
             <ProtectedRoute exact path="/">
               <QRCodes />
             </ProtectedRoute>
@@ -38,34 +40,15 @@ function App() {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <ProtectedRoute exact path="/profile">
-              <Profile />
-            </ProtectedRoute>
-            <Route exact path="/joinsession" exact component={Join} />
-            <Route exact path="/chat" exact component={ChatSidebar} />
-            <Route exact path="/companychat" exact component={CompanyChat} />
-
-            {/* TODO: Change to Protected Routes */}
-            {/* <Route exact path="/chat">
-              <Chat />
-            </Route> */}
-            <Route exact path="/tables">
-              <Tables />
-            </Route>
+            <Route exact path="/chat" exact component={Chat} />
             <ProtectedRoute exact path="/qrcodes">
               <QRCodes />
             </ProtectedRoute>
-            <Route exact path="/reviews">
-              <Reviews />
-            </Route>
-           
+            {/* Customer Routes*/}
             <Route path="/welcome/:company_id/:table_num/:company_name">
               <Welcome />
             </Route>
             <Route path="/customerchat" exact component={CustomerChat} />
-            <Route exact path="/customerreview">
-              <CustomerReview />
-            </Route>
             <Route exact path="/thankyou">
               <ThankYou />
             </Route>
