@@ -26,7 +26,7 @@ function Login() {
   };
 
   return (
-    <div className="background-image">
+    <div className="background-image forms">
     <Logo />
     <div className="login-form">
       <h1>Login</h1>
