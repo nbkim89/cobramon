@@ -19,7 +19,7 @@ const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const errorMiddleware = require("./routes/errorMiddleware"); 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 80;
 
 app.use(cors()); 
 app.use(router);
