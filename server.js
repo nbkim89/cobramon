@@ -85,6 +85,6 @@ io.on('connect', (socket) => {
   })
 });
 
-server.listen(proces.env.PORT || 3001, () => {
+server.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
