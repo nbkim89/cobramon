@@ -7,7 +7,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const { isLoggedIn, logout } = useAuth();
-  const links = [];
+  const links = [<BrandLink key="/" to="/" />];
 
   if (isLoggedIn) {
   links.push(
@@ -39,6 +39,14 @@ function Navbar() {
   }
   
   return <nav className="Navbar">{links}</nav>;
+}
+
+function BrandLink(props) {
+  return (
+    <NavLink className="nav-item brand" exact {...props}>
+      Armonia
+    </NavLink>
+  );
 }
 
 export default Navbar;

@@ -28,5 +28,6 @@
 }
 
 .Navbar .brand {
-  font-weight: bold;
+  font-size: x-large;
+  padding-left: 20px;
 }
