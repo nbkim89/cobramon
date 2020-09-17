@@ -7,8 +7,6 @@ const cors = require("cors");
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 
-const router = require("./router");
-
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
@@ -31,7 +29,6 @@ const PORT = process.env.PORT || 3001;
 // }
 
 app.use(cors());
-app.use(router);
 
 // log all requests to the console in development
 if (process.env.NODE_ENV !== "production") {
@@ -48,13 +45,6 @@ initDb();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-app.use(authRouter, usersRouter, socketRouter, errorMiddleware);
-
-// Send all other requests to react app
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 //*********** SOCKET IO ***********
 // Will execute whenever we have a client connection on 'io'
@@ -108,6 +98,14 @@ io.on("connect", (socket) => {
       });
     }
   });
+});
+
+// Routes
+app.use(authRouter, usersRouter, socketRouter, errorMiddleware);
+
+// Send all other requests to react app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 server.listen(PORT, () => {
