@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Cobra 👋</h1>
+<h1 align="center">Welcome to Armonia 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg" />
@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> A quick way to locate restaurants/bars that adhere to various COVID health/safety mandates, in order to help you make the best and safest decision when dining out. 
+> Armonia seeks to provide restaurants with the ability to reduce the contact between service staff and customers, by integrating a SOCKET.IO chat component, giving service staff real-time interactions with their guests, while reducing the amount of face-face exchanges that take place between the two. In addition, Armonia will provide customers who are presently seated at participating restaurants, the ability to leave reviews about their customer experience, while also giving management the ability to respond to negative feedback in a more real-time exchange, as opposed to viewing a negative review days later on Yelp, which could potentially hurt their business, and even moreso during a Pandemic. 
 
 ### 🏠 [Homepage](https://github.com/goodbyetonto/Cobra)
 
