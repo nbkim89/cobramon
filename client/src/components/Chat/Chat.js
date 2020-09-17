@@ -18,17 +18,15 @@ const Chat = ({ name, room }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "https://cobramon.herokuapp.com/";  //"http://localhost:3001/";
+  const ENDPOINT = "https://cobramon.herokuapp.com/"; //"http://localhost:3001/";
   const company_id = user ? user.id : String(room).split("-")[0];
   const table_id = String(room).split("-")[1];
-
 
   useEffect(() => {
     socket = io(ENDPOINT);
 
     API.getMessages(company_id, table_id)
       .then((response) => {
-        console.log(company_id, table_id);
         const chatArray = response.data[0].chat;
         setMessages([...chatArray]);
       })

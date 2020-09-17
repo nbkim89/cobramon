@@ -13,7 +13,6 @@ router.get("/api/getMessages/:company_id/:table_num", async (req, res) => {
       table_num: table_num,
     });
 
-    console.log(tableMessages);
     res.json(tableMessages);
   } catch (error) {
     if (error) {
@@ -22,6 +21,30 @@ router.get("/api/getMessages/:company_id/:table_num", async (req, res) => {
     }
   }
 });
+
+router.put(
+  "/api/updateCustomerNumber/:company_id/:table_num",
+  async (req, res) => {
+    const company_id = req.params.company_id;
+    const table_num = req.params.table_num;
+    try {
+      const customerNumber = await db.Table.update(
+        {
+          company_id: company_id,
+          table_num: table_num,
+        },
+        { $inc: { customer_number: 1 } }
+      );
+
+      res.json(customerNumber);
+    } catch (error) {
+      if (error) {
+        console.log("Error getting customer number");
+        res.status(500).send(error);
+      }
+    }
+  }
+);
 
 router.post("/api/sendMessage", async (req, res) => {
   const tableId = req.body.table_id;

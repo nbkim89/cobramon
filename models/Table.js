@@ -12,6 +12,10 @@ const TableSchema = new Schema({
   },
   QR_code: String,
   isActive: Boolean,
+  customer_number: {
+    type: Number,
+    default: 001,
+  },
   chat: [],
 });
 

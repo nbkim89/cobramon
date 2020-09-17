@@ -23,4 +23,7 @@ export default {
   getMessages: (company_id, table_num) => {
     return axios.get(`/api/getMessages/${company_id}/${table_num}`);
   },
+  updateCustomerNumber: (company_id, table_num) => {
+    return axios.put(`/api/updateCustomerNumber/${company_id}/${table_num}`);
+  },
 };
