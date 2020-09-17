@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose"); 
+const mongoose = require("mongoose");
 const http = require("http");
 const socketio = require("socket.io");
 const cors = require("cors");
@@ -23,12 +23,12 @@ const errorMiddleware = require("./routes/errorMiddleware");
 
 const PORT = process.env.PORT || 3001;
 
-const uri = "mongodb+srv://admin:Ji8HYNeaoj6dEoUn@cobramon.gxk15.mongodb.net/appDB?retryWrites=true&w=majority"; 
+// const uri = "mongodb+srv://admin:Ji8HYNeaoj6dEoUn@cobramon.gxk15.mongodb.net/appDB?retryWrites=true&w=majority";
 
-mongoose.connect(uri) || "http://localhost:3001/", {
-  useNewUrlParser: true, 
-  useUnifiedTopology: true
-}
+// mongoose.connect(uri) || "http://localhost:3001/", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// }
 
 app.use(cors());
 app.use(router);
@@ -69,7 +69,9 @@ io.on("connect", (socket) => {
     // Here, emit will only send a message to the device that just joined the table
     socket.emit("message", {
       user: "admin",
-      text: `Hello ${user.name}, welcome to table ${user.room.substring(user.room.indexOf("-") + 1)}.`,
+      text: `Hello ${user.name}, welcome to table ${user.room.substring(
+        user.room.indexOf("-") + 1
+      )}.`,
     });
     // broadcast.to will emit message to all users of a particular table, in this case, that another device has joined
     socket.broadcast
