@@ -101,6 +101,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-server.listen(proces.env.PORT || 3001, () => {
+server.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
