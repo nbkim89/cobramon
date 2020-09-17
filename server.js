@@ -69,7 +69,7 @@ io.on("connect", (socket) => {
     // Here, emit will only send a message to the device that just joined the table
     socket.emit("message", {
       user: "admin",
-      text: `${user.name}, welcome to room ${user.room}.`,
+      text: `Hello ${user.name}, welcome to table ${user.room.substring(user.room.indexOf("-") + 1)}.`,
     });
     // broadcast.to will emit message to all users of a particular table, in this case, that another device has joined
     socket.broadcast
